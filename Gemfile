@@ -5,6 +5,8 @@ ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
+# Add HIRB Table viewer
+gem 'hirb'
 # Adds the cryptographic hash function tool bcrypt
 gem 'bcrypt'
 # Adds Less to Sass converter for Bootstrap integration

@@ -102,6 +102,7 @@ GEM
     guard-minitest (2.4.6)
       guard-compat (~> 1.2)
       minitest (>= 3.0)
+    hirb (0.7.3)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
@@ -264,6 +265,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   guard
   guard-minitest
+  hirb
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
   minitest
