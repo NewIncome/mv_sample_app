@@ -5,9 +5,11 @@ ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
-# Add Less to Sass converter for Bootstrap integration
+# Adds the cryptographic hash function tool bcrypt
+gem 'bcrypt'
+# Adds Less to Sass converter for Bootstrap integration
 gem 'bootstrap-sass'
-# Add Rubocop for linter tests
+# Adds Rubocop for linter tests
 gem 'rubocop'
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
