@@ -5,7 +5,7 @@ class User < ApplicationRecord
   # adding custom short email Regexp
   # also we test for uniqueness and case insensitivity
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates(:email, presence: true, length: { maximum: 19 },
+  validates(:email, presence: true, length: { maximum: 40 },
       format: { with: VALID_EMAIL_REGEX },
       uniqueness: { case_sensitive: false })
   has_secure_password
