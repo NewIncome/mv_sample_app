@@ -30,7 +30,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'email should be short' do
-    @user.email = 'a' * 20 + '@example.com'
+    @user.email = 'a' * 30 + '@example.com'
     assert_not @user.valid?
   end
 
