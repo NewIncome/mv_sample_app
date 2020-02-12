@@ -10,6 +10,8 @@
       <!--to show the flass-success message for correct signup-->
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <!-- or can be done with this tag:
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %> -->
       <% end %>
       <!--to call the content of the corresponding page-->
       <%= yield %>
