@@ -13,7 +13,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      #Handle a successful save.
+      # just created the 'flash' obj, gave it a 'key' and a 'value'.
+      flash[:success] = "Welcome to the Sample App!!"
+      redirect_to @user  # to go to the new profile after correct submission.
+      # the above is the same as:  redirect_to user_url(@user)
     else
       render 'new'
     end
