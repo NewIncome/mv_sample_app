@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       redirect_to user   # same as-->  user_url(user)
-      debugger
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
