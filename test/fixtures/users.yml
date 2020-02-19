@@ -9,3 +9,9 @@
 #   email: MyString
 
 # we won't be using them for now!
+
+# now we'll be testing for correct session logins
+michael:
+  name: Michael Example
+  email: michael@example.com
+  password_digest: <%= User.digest('password') %>

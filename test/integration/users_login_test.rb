@@ -1,13 +1,16 @@
 require 'test_helper'
 
 class UsersLoginTest < ActionDispatch::IntegrationTest
+  def setup
+    @user = users(:michael)
+  end
   # # With the following test we will check:
-  # Visit the login path.
-  # Verify that the new sessions form renders properly.
-  # Post to the sessions path with an invalid params hash.
-  # Verify that the new sessions form gets re-rendered and that a flash message appears.
-  # Visit another page (such as the Home page).
-  # Verify that the flash message doesn’t appear on the new page.
+  # 1.-Visit the login path.
+  # 2.-Verify that the new sessions form renders properly.
+  # 3.-Post to the sessions path with an invalid params hash.
+  # 4.-Verify that the new sessions form gets re-rendered and that a flash message appears.
+  # 5.-Visit another page (such as the Home page).
+  # 6.-Verify that the flash message doesn’t appear on the new page.
   test 'login with invalid information' do
     get login_path
     assert_template 'sessions/new'
@@ -17,4 +20,16 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     get root_path
     assert flash.empty?
   end
+
+  test 'login with valid information' do
+    get login_path
+    post login_path, params: { session: { email:    @user.email,
+                                          password: 'password' } }
+    assert_redirected_to @user   # to check the right redirect target
+    follow_redirect!             # to actually visit the target page
+    assert_select "a[href=?]", login_path, count: 0  # verifies the
+    # login link disappears by verifying there are 0 login path links.
+    assert_select "a[href=?]", logout_path
+    assert_select "a[href=?]", user_path(@user)
+  end  
 end
