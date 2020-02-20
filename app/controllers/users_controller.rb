@@ -13,6 +13,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      # to log in the user immediately after signing up.
+      log_in @user
       # just created the 'flash' obj, gave it a 'key' and a 'value'.
       flash[:success] = "Welcome to the Sample App!!"
       redirect_to @user  # to go to the new profile after correct submission.
