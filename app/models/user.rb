@@ -32,9 +32,14 @@ class User < ApplicationRecord
     #self.update(name: "Javier")
   end
 
-  # Returns treu if the given token matches the digest.
+  # Returns true if the given token matches the digest.
   def authenticated?(remember_token)   # this rem_tok is a local variable, not the :rem_tok from line 2
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
     # remember_digest is the same as self.remember_digest
+  end
+
+  # Forgets a user.
+  def forget
+    update_attribute(:remember_digest, nil)
   end
 end
