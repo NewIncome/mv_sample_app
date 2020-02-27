@@ -165,6 +165,20 @@ input {
   height: auto !important;
 }
 
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
 /*** Error Messages styling ***/
 
 #error_explanation {  // auto-made by rails, we just style it.
