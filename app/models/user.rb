@@ -10,7 +10,12 @@ class User < ApplicationRecord
       format: { with: VALID_EMAIL_REGEX },
       uniqueness: { case_sensitive: false })
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 },
+                      allow_nil: true   # this is to pass some tests
+  # also this does not interfere with correct operation of having empty
+  # passwords because the has_secure_password method activet.
+  # So it's mainly used for <tests> and for <update/edit> purposes::to
+  # update other fields.
 
    # Returns the hash digest of the given string. We'll use it for
    # testing purposes, this is code 'bcryp' uses.
