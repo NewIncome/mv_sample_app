@@ -20,14 +20,19 @@ class UserEditTest < ActionDispatch::IntegrationTest
     assert_select 'div.alert', 'The form contains 4 errors.'
   end
 
-  test "successful edit" do
+  test "successful edit with friendly forwarding" do
     # log_in_as(@user)
     # get edit_user_path(@user)
     # assert_template 'users/edit'
     # commented because now we'll test for Friendly Forwarding
+    p "THIS IS THE USER NAME: #{@user.name}"
+    p "THIS IS THE USER ID: #{@user.id}"
     get edit_user_path(@user)
     log_in_as(@user)
-    assert_redirected_to edit_user_url(@user)
+    assert_redirected_to edit_user_url(@user) # Here we are testing that we
+    # are being "friendly" forwarded to the edit_user which is the place we
+    # wanted to go before being sent to the login, instead of being redirected
+    # to the user/show like is coded in the sessions#create.
 
     name  = "Foo Bar"
     email = "foo@bar.com"

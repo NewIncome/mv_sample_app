@@ -59,6 +59,8 @@ module SessionsHelper
   # Stores the URL trying to be accessed.
   def store_location
     session[:forwarding_url] = request.original_url if request.get?
+    # Here we use the 'request' object to get the originally requested URL.
   end
-  # to use this accurately we need to add it in the logged_in_user method. before filter
+  # to use this accurately we need to add it in the logged_in_user method,
+  # before filter. In the user#logged_in_user.
 end
