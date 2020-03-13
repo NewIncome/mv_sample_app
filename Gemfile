@@ -7,6 +7,9 @@ ruby '2.7.0'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 # Add jquery for bootstrap
 gem 'jquery-rails', '4.3.1'
+# Add paginate required Gems
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 # Add HIRB Table viewer
 gem 'hirb'
 # Adds the cryptographic hash function tool bcrypt
