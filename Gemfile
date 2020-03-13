@@ -17,7 +17,7 @@ gem 'bootstrap-sass'
 gem 'rubocop'
 # some edits for Security updates, per GitHub requests
 # Use Puma as the app server
-gem 'puma', '~> 4.1', '>= 4.3.3'
+gem 'puma', '>= 4.3.3'
 # Upgrade nokogiri to version 1.10.8 or later.
 gem "nokogiri", ">= 1.10.8"
 # Use SCSS for stylesheets
