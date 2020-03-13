@@ -92,6 +92,8 @@ GEM
     debug_inspector (0.0.3)
     erubi (1.9.0)
     execjs (2.7.0)
+    faker (2.10.2)
+      i18n (>= 1.6, < 2)
     ffi (1.12.1)
     formatador (0.2.5)
     globalid (0.4.2)
@@ -278,6 +280,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   capybara (>= 2.15)
+  faker
   guard
   guard-minitest
   hirb
