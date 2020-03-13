@@ -1,12 +1,22 @@
 <h1>All users</h1>
 
 <%= will_paginate %>
+
 <ul class="users">
-  <% @users.each do |user| %>
-    <li>
-      <%= gravatar_for user%> <%# <%= gravatar_for user, size: 50 %>
-      <%= link_to user.name, user %>
-    </li>
-    <% end %>
+  <%= render @users %>
+  <%# the render is called on a user variable of class User instead than
+   on a partial. So it looks first for a partial named User %>
+  <%# But when used with a local variable it infers that it is a list of user
+  objects,
+  it iterates through them and
+  renders Each One with the _users partial. %>
 </ul>
 <%= will_paginate %>
+
+<%# the above REFACTORED this code: %>
+  <%# <% @users.each do |user| %>
+    <%# <li> %>
+      <%# <%= gravatar_for user%> <%# <%= gravatar_for user, size: 50 %>
+      <%# <%= link_to user.name, user %>
+    <%# </li> %>
+  <%# <% end %>
