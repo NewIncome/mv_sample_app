@@ -35,7 +35,25 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     patch user_path(@other_user), params: {
                                     user: { password:              'password',
                                             password_confirmation: 'password',
-                                            admin: false } }
-    assert_not @other_user.toggle!.admin?
+                                            admin: true } }
+    assert_not @other_user.admin?
+  end
+
+#  We need to check two cases: first, users who aren’t logged in should be
+# redirected to the login page; second, users who are logged in but who aren’t
+# admins should be redirected to the Home page.
+  test "should redirect destroy when not logged in" do
+    assert_no_difference 'User.count' do   # asserts user count doesn’t change.
+      delete user_path(@user)
+    end
+    assert_redirected_to login_url
+  end
+
+  test "should redirect destroy when logged in as a non-admin" do
+    log_in_as(@other_user)
+    assert_no_difference 'User.count' do
+      delete user_path(@user)   # here it's trying to delete that user_path.
+    end
+    assert_redirected_to root_url
   end
 end
