@@ -40,9 +40,11 @@ class User < ApplicationRecord
   end
 
   # Returns true if the given token matches the digest.
-  def authenticated?(remember_token)   # this rem_tok is a local variable, not the :rem_tok from line 2
-    return false if remember_digest.nil?
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  def authenticated?(attribute, token)   # this rem_tok is a local variable, not the :rem_tok from line 2
+    # now added a change for generic names
+    digest = send("#{attribute}_digest")  # = self.send
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
     # remember_digest is the same as self.remember_digest
   end
 
