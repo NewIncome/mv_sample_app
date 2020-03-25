@@ -22,12 +22,18 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      # to log in the user immediately after signing up.
-      log_in @user
-      # just created the 'flash' obj, gave it a 'key' and a 'value'.
-      flash[:success] = "Welcome to the Sample App!!"
-      redirect_to @user  # to go to the new profile after correct submission.
-      # the above is the same as:  redirect_to user_url(@user)
+      # # to log in the user immediately after signing up.
+      # log_in @user
+      # # just created the 'flash' obj, gave it a 'key' and a 'value'.
+      # flash[:success] = "Welcome to the Sample App!!"
+      # redirect_to @user  # to go to the new profile after correct submission.
+      # # the above is the same as:  redirect_to user_url(@user)
+
+      # the above is not used anymore because now we will redirect to the root
+      # instead of the users profile thanks to the account_activation.
+      UserMailer.account_activation(@user).deliver_now
+      flash[:info] = "Please check your email to activate your account."
+      redirect_to root_url
     else
       render 'new'
     end
