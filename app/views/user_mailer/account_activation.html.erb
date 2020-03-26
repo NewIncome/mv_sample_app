@@ -8,3 +8,8 @@ Welcome to the Sample App! Click on the link below to activate your account:
 
 <%= link_to 'Activate', edit_account_activation_url(@user.activation_token,
                                                     email: @user.email) %>
+<%# This is will be clearer looking t the routes:
+edit_account_activation     GET     /account_activations/:id/edit(.:format)      account_activations#edit
+
+so with the link, you send:  edit_account_activation_url(:id, ... :email)
+so the :id is sent by force, first, because it is needed by the edit account activation URL %>

@@ -8,7 +8,7 @@ class UserMailer < ApplicationMailer
   def account_activation(user)
     @user = user
     mail to: user.email, subject: 'Account activation'
-    # this is a method:
+    # this(mail) is a method:
     # mail(to: @user.email, subject: 'Welcome to My Awesome Site')
   end
 
