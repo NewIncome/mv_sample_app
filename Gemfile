@@ -6,7 +6,7 @@ ruby '2.7.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 # Add jquery for bootstrap
-gem 'jquery-rails', '4.3.1'
+gem 'jquery-rails'
 # Add paginate required Gems
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
