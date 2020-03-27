@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy   # to enforce access control.
 
   def index
-    @users = User.paginate(page: params[:page], per_page: 10) # can be used simple (page: params[:page])
+    @users = User.where(activated: true).paginate(page: params[:page], per_page: 10) # can be used simple (page: params[:page])
     # that is with the default 30 elements per page.
   end
 
@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     # debugger. Adds a debugger in the Rails Server
     # for the chosen View.
+    redirect_to root_url and return unless @user.valid? # is that unless correct
   end
 
   def new

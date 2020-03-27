@@ -3,34 +3,23 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
-# Add jquery for bootstrap
-gem 'jquery-rails'
-# Add paginate required Gems
-gem 'will_paginate'
+gem 'rails', '~> 6.0.2', '>= 6.0.2.1'   # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'jquery-rails'    # Add jquery for bootstrap
+gem 'will_paginate'   # Add paginate required Gems
 gem 'bootstrap-will_paginate'
-# Add HIRB Table viewer
-gem 'hirb'
-# Adds the cryptographic hash function tool bcrypt
-gem 'bcrypt'
-# Adds Less to Sass converter for Bootstrap integration
-gem 'bootstrap-sass'
-# Adds Rubocop for linter tests
-gem 'rubocop'
+
+gem 'hirb'            # Add HIRB Table viewer
+gem 'bcrypt'          # Adds the cryptographic hash function tool bcrypt
+gem 'bootstrap-sass'  # Adds Less to Sass converter for Bootstrap integration
+gem 'rubocop'         # Adds Rubocop for linter tests
+
 # some edits for Security updates, per GitHub requests
-# Use Puma as the app server
-gem 'puma', '>= 4.3.3'
-# Upgrade nokogiri to version 1.10.8 or later.
-gem "nokogiri", ">= 1.10.8"
-# Use SCSS for stylesheets
-gem 'sass-rails', '>= 6'
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 4.0'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.7'
+gem 'puma', '>= 4.3.3'        # Use Puma as the app server
+gem "nokogiri", ">= 1.10.8"   # Upgrade nokogiri to version 1.10.8 or later.
+gem 'sass-rails', '>= 6'      # Use SCSS for stylesheets
+gem 'webpacker', '~> 4.0'     # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'turbolinks', '~> 5'      # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem 'jbuilder', '~> 2.7'      # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -43,34 +32,30 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3', '~> 1.4'
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'sqlite3', '~> 1.4'    # Use sqlite3 as the database for Active Record
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]    # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'faker'
 end
 
 group :development do
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
+  gem 'web-console', '>= 3.3.0'     # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+
+  gem 'spring'            # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring-watcher-listen', '~> 2.0.0'
-  # Gems suggested by appacademy.io
-  gem 'better_errors'
+  
+  gem 'better_errors'     # Gems suggested by appacademy.io
   gem 'binding_of_caller'
   gem 'pry-rails'
 end
 
 group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+  gem 'capybara', '>= 2.15'       # Adds support for Capybara system testing and selenium driver
   gem 'selenium-webdriver'
-  # Easy installation and use of web drivers to run system tests with browsers
-  gem 'webdrivers'
-  # TESTING GEMS
-  gem 'rails-controller-testing'
+
+  gem 'webdrivers'                # Easy installation and use of web drivers to run system tests with browsers
+
+  gem 'rails-controller-testing'  # TESTING GEMS
   gem 'minitest'
   gem 'minitest-reporters'
   gem 'guard'
@@ -81,5 +66,4 @@ group :production do
   gem 'pg'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]  # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
