@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'static_pages#contact'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'   # ??? it works without being a delete request!?!?
   resources :users # endows our sample application with all the actions needed for a RESTful Users resource.
   resources :account_activations, only: [:edit]
 end
