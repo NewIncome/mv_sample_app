@@ -4,6 +4,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
 
   def setup
     ActionMailer::Base.deliveries.clear
+    # This is to reset the 'deliveries' array because it is Global.
   end
 
   test 'invalid signup information' do
@@ -31,6 +32,9 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                          password_confirmation: 'password' } }
     end
     assert_equal 1, ActionMailer::Base.deliveries.size
+    # 'assigns' lets us access instance variables in the corresponding action.
+    # It is deprecated as of Rails 5 but it could be useful...
+    # so it's available via the GEM rails-controller-testing
     user = assigns(:user)
     assert_not user.activated?
     # Try to log in before activation.

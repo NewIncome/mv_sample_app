@@ -19,7 +19,8 @@ class SessionsController < ApplicationController
         redirect_to root_url
       end
     else
-      flash[:danger] = 'Invalid email/password combination'
+      # The .now is designed for displaying flash messages on rendered pages.
+      flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
     end
   end
