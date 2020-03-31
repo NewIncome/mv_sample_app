@@ -13,6 +13,12 @@ All source code in the [Ruby on Rails Tutorial](https://www.railstutorial.org/)
 is available jointly under the MIT License and the Beerware License. See
 [LICENSE.md](LICENSE.md) for details.
 
+
+## LIVE vesion and Git repo links
+- [Live version](https://agile-sea-80673.herokuapp.com/)
+- [Git Repo](https://github.com/NewIncome/mv_sample_app)
+
+
 ## Getting started
 
 To get started with the app, clone the repo and then install the needed gems:
