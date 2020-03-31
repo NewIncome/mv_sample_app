@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
   before_save { self.email = email.downcase }
-  validates :name, presence: true, length: { maximum: 19 }
+  validates :name, presence: true, length: { maximum: 40 }
   # () and {} not needed, but indeed an object is being passed.
   # adding custom short email Regexp
   # also we test for uniqueness and case insensitivity
