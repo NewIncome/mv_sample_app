@@ -11,12 +11,14 @@ gem 'bootstrap-will_paginate'
 gem 'hirb'            # Add HIRB Table viewer
 gem 'bcrypt'          # Adds the cryptographic hash function tool bcrypt
 gem 'bootstrap-sass'  # Adds Less to Sass converter for Bootstrap integration
+gem 'popper'
 gem 'rubocop'         # Adds Rubocop for linter tests
 
 # some edits for Security updates, per GitHub requests
 gem 'puma', '>= 4.3.3'        # Use Puma as the app server
 gem "nokogiri", ">= 1.10.8"   # Upgrade nokogiri to version 1.10.8 or later.
 gem 'sass-rails', '>= 6'      # Use SCSS for stylesheets
+gem 'sassc-rails'
 gem 'webpacker', '~> 4.0'     # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'turbolinks', '~> 5'      # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'jbuilder', '~> 2.7'      # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
