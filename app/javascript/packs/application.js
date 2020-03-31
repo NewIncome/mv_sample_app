@@ -19,9 +19,9 @@ require("channels")
 //import { Application } from "stimulus"
 //import { definitionsFromContext } from "stimulus/webpack-helpers"
 
-import 'bootstrap'
-//import "../stylesheets/application"
+// import 'bootstrap'
+// //import "../stylesheets/application"
 
-document.addEventListener("turbolinks:load", () => {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+// document.addEventListener("turbolinks:load", () => {
+//   $('[data-toggle="tooltip"]').tooltip()
+// })
